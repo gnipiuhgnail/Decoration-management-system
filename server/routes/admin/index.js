@@ -2,7 +2,7 @@ module.exports = app =>{
   const express = require('express')
   // const router = express.Router()
 
-// 对不同类的东西的管理的后台操作基本一样，知识前端界面的字段不一样
+// 对不同类的东西的管理的后台操作基本一样，只是前端界面的字段不一样
 // 后台接口基本一样
 // 模型，URL不一样
 // 将连接地址与数据库模型名字联系起来
@@ -138,7 +138,7 @@ const router = express.Router({
   // const Model = require(`../../models/${modelName}`)
   // 这两行代码做成中间件
   app.use('/admin/api/rest/:resource',async(req,res,next)=>{
-    // 给请求对象res挂载一个Model属性，让后面的路由能够食用这个model
+    // 给请求对象res挂载一个Model属性，让后面的路由能够使用这个model
     const modelName = require('inflection').classify(req.params.resource)
     req.Model = require(`../../models/${modelName}`)
     next()
