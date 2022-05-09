@@ -1,1 +1,1 @@
-毕设：装修后台管理系统
+Vue（ElementUI）+node.js（Express）+MongoDB（mongoose）
